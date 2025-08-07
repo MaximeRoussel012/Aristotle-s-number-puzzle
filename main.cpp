@@ -10,7 +10,7 @@
 
 using namespace std;
 using namespace Eigen;
-int n=19;
+
  
 const bool verified(const std::vector<int>& v){
 for (int i=0;i<v.size()-1;i++){
@@ -23,41 +23,6 @@ return true;
 
 
 int main() {
-/*   
-MatrixXd A =Eigen::MatrixXd::Zero(n,n);
-
-//4 conditions lignes
-  A(0,0) = 1;  A(0,1) = 1;  A(0,2) = 1;
-  A(1,3) = 1;  A(1,4) = 1;  A(1,5) = 1;  A(1,6) = 1;
-  A(2,7) = 1;  A(2,8) = 1;  A(2,9) = 1;  A(2,10) = 1;  A(2,11) = 1;
-  A(3,12) = 1;  A(3,13) = 1;  A(3,14) = 1;  A(3,15) = 1;
-  //4 conditions diagonnales "/"
-  A(4,0) = 1;  A(4,3) = 1;  A(4,7) = 1;
-  A(5,1) = 1;  A(5,4) = 1;  A(5,8) = 1;  A(5,12) = 1;
-  A(6,2) = 1;  A(6,5) = 1;  A(6,9) = 1;  A(6,13) = 1;  A(6,16) = 1;
-  A(7,6) = 1;  A(7,10) = 1;  A(7,14) = 1;  A(7,17) = 1;
-  //4 conditions diagonnales"\"
-  A(8,2) = 1;  A(8,6) = 1;  A(8,11) = 1;
-  A(9,1) = 1;  A(9,5) = 1;  A(9,10) = 1;  A(9,15) = 1;
-  A(10,0) = 1;  A(10,4) = 1;  A(10,9) = 1;  A(10,14) = 1;  A(10,18) = 1;
-  A(11,3) = 1;  A(11,8) = 1;  A(11,13) = 1;  A(11,17) = 1;
-  // 6 conditions pour imposer les coins
-  A(12,0)= 1;
-  A(13,1)= 1;
-  A(14,6)= 1;
-  A(15,15)=1;
-  A(16,17)=1;
-  A(17,12)=1;
-  // la condition du cercle intérieur 
-  A(18,4)=1; 
-  
-  
- //code pour vérifier que la matrice A est de rang 19 et donc qu'elle est inversible
- JacobiSVD<Eigen::MatrixXd> svd(A);
- const double epsilon = 1e-10;  // Tolérance numérique pour considérer un zéro
- int rank = (svd.singularValues().array() > epsilon).count();
- cout<<"la matrice \n"<< A <<endl<< "son rang "  << rank <<  " et de det "<< A.determinant() << endl; 
- */
 
 //détrerminons toutes les combinaisons possible et classons les dans un vecteur de vecteurs
 std::vector<std::vector<int>> v(20);
@@ -71,28 +36,6 @@ for (int i=1;i<20;i++){
         } 
     }
 } 
-/*
-const std::vector<std::vector<int>> v= {{0},
-{18,19},
-{17,19},
-{16,17,18,19},
-{15,16,18,19},
-{14,15,16,17,18,19},
-{13,14,15,17,18,19},
-{12,13,14,15,16,17,18,19},
-{11,12,13,14,16,17,18,19},
-{10,11,12,13,14,15,16,17,18,19},
-{9,11,12,13,15,16,17,19},
-{8,9,10,12,13,14,15,17,18,19},
-{7,8,9,10,11,15,16,17,18,19},
-{6,7,8,9,10,11,14,15,16,17,18,19},
-{5,6,7,8,9,11,13,15,16,17,18,19},
-{4,5,6,7,9,10,11,12,13,14,16,17,18,19},
-{3,4,5,7,8,9,10,12,13,14,15,17,18,19},
-{2,3,5,6,7,8,9,10,11,12,13,14,15,16,18,19},
-{1,3,4,5,6,7,8,9,11,12,13,14,15,16,17,19}, 
-{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18},
-};*/
 
 const std::list<int> num = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
 std::list<std::vector<int>> soluces;
@@ -155,5 +98,6 @@ for (auto sol : soluces){
 
 return 0;
 }
+
 
 
