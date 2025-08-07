@@ -21,7 +21,7 @@ La première idée est de re-numéroter chaque case comme suit:
 Il vient alors un vecteur X concaténant chaque ligne à la suite.
 
 On séparera ensuite le projet en 2 parties distinctes 
--Etape 1 : L'anlyse des conditions sur le vecteur X.
+-Etape 1 : L'analyse des conditions sur le vecteur X.
 -Etape 2: La mise en place du programme de résolution.
 
 
